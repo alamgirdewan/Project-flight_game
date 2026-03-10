@@ -10,7 +10,7 @@ db = mysql.connector.connect(
 )
 cursor = db.cursor(dictionary=True)
 
-#from here Ekram khan will write the welcoming message
+
 
 def start_game():
     print("🌍 ECO-BUILDER: THE GREEN MACHINE MISSION 🌍")
@@ -32,3 +32,7 @@ def start_game():
     collected_parts = []
 
 while len(visited_airports) < 10 and CO2_budget > 0:
+
+    cursor.execute(
+        f"SELECT name, iso_country, latitude_deg, longitude_deg FROM airport WHERE ident = '{current_location}'")
+    current_airport = cursor.fetchone()
