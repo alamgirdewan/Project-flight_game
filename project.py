@@ -53,7 +53,7 @@ if len(visited_airports) > 0 and len(required_parts) > 0:
                 collected_parts.append(new_part)
                 required_parts.remove(new_part)
 
-        elif len(visited_airports) == 0:
+            elif len(visited_airports) == 0:
             print("🔍 Mission started! Fly to another airport to find parts.")
 
         max_dist_deg = CO2_budget / 100
