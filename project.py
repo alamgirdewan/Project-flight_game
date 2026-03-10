@@ -1,12 +1,13 @@
 
 import mysql.connector
 import random
+import config
 
 db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="Deva1965",
-    database="flight_game"
+    host=config.DB_HOST,
+    user=config.DB_USER,
+    password=config.DB_PASSWORD,
+    database=config.DB_NAME
 )
 cursor = db.cursor(dictionary=True)
 
