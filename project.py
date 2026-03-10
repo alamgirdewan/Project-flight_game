@@ -70,6 +70,7 @@ if len(visited_airports) > 0 and len(required_parts) > 0:
 
         cursor.execute(sql)
         options = cursor.fetchall()
+
 if not options:
             print("\nAlas! Your CO2 budget is finished, You don't have any CO2 to go other airports")
             break
