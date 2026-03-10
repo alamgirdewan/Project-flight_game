@@ -10,4 +10,4 @@ db = mysql.connector.connect(
 )
 cursor = db.cursor(dictionary=True)
 
-
+#from here Ekram khan will write the welcoming message
