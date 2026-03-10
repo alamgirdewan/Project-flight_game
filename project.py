@@ -36,3 +36,11 @@ while len(visited_airports) < 10 and CO2_budget > 0:
     cursor.execute(
         f"SELECT name, iso_country, latitude_deg, longitude_deg FROM airport WHERE ident = '{current_location}'")
     current_airport = cursor.fetchone()
+
+    lat = current_airport['latitude_deg']
+    lon = current_airport['longitude_deg']
+
+    print(f"\n📍 Location: {current_airport['name']} ({current_airport['iso_country']})")
+    print(f"💰 Budget: {CO2_budget}")
+    print(f"🚩 Visited Airports: {len(visited_airports)}/10")
+    print(f"🛠 Collected Parts: {len(collected_parts)}/5 - {collected_parts}")
