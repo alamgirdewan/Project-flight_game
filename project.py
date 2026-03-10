@@ -76,3 +76,7 @@ if not options:
             break
 
         print("\nNext Destinations (Within Budget):")
+
+
+
+start_game()
