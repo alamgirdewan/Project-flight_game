@@ -44,3 +44,13 @@ while len(visited_airports) < 10 and CO2_budget > 0:
     print(f"💰 Budget: {CO2_budget}")
     print(f"🚩 Visited Airports: {len(visited_airports)}/10")
     print(f"🛠 Collected Parts: {len(collected_parts)}/5 - {collected_parts}")
+
+if len(visited_airports) > 0 and len(required_parts) > 0:
+            if random.random() < 0.4:
+                new_part = random.choice(required_parts)
+                print(f"✨ Ohho! You got '{new_part}' in this airport!")
+                collected_parts.append(new_part)
+                required_parts.remove(new_part)
+
+        elif len(visited_airports) == 0:
+            print("🔍 Mission started! Fly to another airport to find parts.")
