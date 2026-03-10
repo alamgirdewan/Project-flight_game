@@ -55,3 +55,18 @@ if len(visited_airports) > 0 and len(required_parts) > 0:
 
         elif len(visited_airports) == 0:
             print("🔍 Mission started! Fly to another airport to find parts.")
+
+        max_dist_deg = CO2_budget / 100
+
+        sql = f"""
+            SELECT ident, name, iso_country, latitude_deg, longitude_deg 
+            FROM airport 
+            WHERE ident != '{current_location}' 
+            AND type = 'large_airport'
+            AND (ABS(latitude_deg - {lat}) + ABS(longitude_deg - {lon})) <= {max_dist_deg}
+            ORDER BY RAND() 
+            LIMIT 3
+        """
+
+        cursor.execute(sql)
+        options = cursor.fetchall()
