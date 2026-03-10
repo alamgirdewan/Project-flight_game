@@ -30,3 +30,5 @@ def start_game():
 
     required_parts = ["Electric Motor", "Battery", "Air Filter", "Propeller", "Solar Panel"]
     collected_parts = []
+
+while len(visited_airports) < 10 and CO2_budget > 0:
