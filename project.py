@@ -77,6 +77,10 @@ if not options:
 
         print("\nNext Destinations (Within Budget):")
 
-
+for i, opt in enumerate(options):
+            dist = ((opt['latitude_deg'] - lat) * 2 + (opt['longitude_deg'] - lon) * 2) ** 0.5
+            cost = round(dist * 100)
+            print(f"{i + 1}. {opt['name']} ({opt['iso_country']}) - Cost: {cost} units")
+            opt['current_cost'] = cost
 
 start_game()
