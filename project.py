@@ -11,3 +11,22 @@ db = mysql.connector.connect(
 cursor = db.cursor(dictionary=True)
 
 #from here Ekram khan will write the welcoming message
+
+def start_game():
+    print("🌍 ECO-BUILDER: THE GREEN MACHINE MISSION 🌍")
+
+
+    screen_name = input("Enter your name: ")
+    print(f"\n🚀 Welcome, Captain {screen_name}!")
+    print("🌍 The world is facing a lot of pollutions, our last hope is you, only you can save us.")
+    print("🛠 You need to build an eco-friendly machine to refine our atmosphere.")
+    print("To build that machine you need to find 5 parts and visit at least 10 NEW airports.")
+
+    print("⚡ Remember captain, your CO2 budget is limited. So, take every step wisely!")
+
+    CO2_budget = 10000
+    current_location = 'EFHK'
+    visited_airports = set()
+
+    required_parts = ["Electric Motor", "Battery", "Air Filter", "Propeller", "Solar Panel"]
+    collected_parts = []
