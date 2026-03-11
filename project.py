@@ -83,4 +83,17 @@ for i, opt in enumerate(options):
             print(f"{i + 1}. {opt['name']} ({opt['iso_country']}) - Cost: {cost} units")
             opt['current_cost'] = cost
 
+            try:
+                choice = int(input("\nChoice (1/2/3): ")) - 1
+                selected_airport = options[choice]
+
+                visited_airports.add(selected_airport['ident'])
+
+                CO2_budget -= selected_airport['current_cost']
+                current_location = selected_airport['ident']
+
+            except (ValueError, IndexError):
+                print("❌ Invalid choice! Try again.")
+
+
 start_game()
