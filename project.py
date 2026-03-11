@@ -104,5 +104,8 @@ if len(visited_airports) >= 10 and len(collected_parts) == 5:
         print(
             "You fought brave, Captain, but it wasn't enough.\nThe eco-machine remains unfinished, and the atmosphere has reached its breaking point.\nAs the skies turn grey, we realizes that the destruction is here, and it is absolute")
 
-
+        if CO2_budget <= 0:
+            print("Reason: Your CO2 budget is exhausted.")
+        if len(visited_airports) < 10: print(f"Reason: You visited only {len(visited_airports)} new airports.")
+        if len(collected_parts) < 5: print(f"Reason: You couldn't collect all 5 parts.")
 start_game()
