@@ -96,4 +96,13 @@ for i, opt in enumerate(options):
                 print("❌ Invalid choice! Try again.")
 
 
+if len(visited_airports) >= 10 and len(collected_parts) == 5:
+        print(f"🏆 Mission accomplished! Congratulations Captain {screen_name}!")
+        print("You visited 10 airports and collected all 5 parts to save the world!")
+
+    else:
+        print(
+            "You fought brave, Captain, but it wasn't enough.\nThe eco-machine remains unfinished, and the atmosphere has reached its breaking point.\nAs the skies turn grey, we realizes that the destruction is here, and it is absolute")
+
+
 start_game()
