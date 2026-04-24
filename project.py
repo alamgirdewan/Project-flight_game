@@ -16,13 +16,13 @@ cursor = db.cursor(dictionary=True)
 
 def start_game():
 
-    print("🌍 ECO-BUILDER: THE GREEN MACHINE MISSION 🌍")
+    print(" ECO-BUILDER: THE GREEN MACHINE MISSION ")
     screen_name = input("Enter your name: ")
-    print(f"\n🚀 Welcome, Captain {screen_name}!")
-    print("🌍 The world is facing a lot of pollutions, our last hope is you, only you can save us.")
-    print("🛠 You need to build an eco-friendly machine to refine our atmosphere.")
+    print(f"\n Welcome, Captain {screen_name}!")
+    print(" The world is facing a lot of pollutions, our last hope is you, only you can save us.")
+    print(" You need to build an eco-friendly machine to refine our atmosphere.")
     print("To build that machine you need to find 5 parts and visit at least 10 new airports.")
-    print("⚡ Remember captain, your CO2 budget is limited. So, take every step wisely!")
+    print(" Remember captain, your CO2 budget is limited. So, take every step wisely!")
 
     CO2_budget = 10000
     current_location = 'EFHK'
@@ -40,19 +40,19 @@ def start_game():
         lat = current_airport['latitude_deg']
         lon = current_airport['longitude_deg']
 
-        print(f"\n📍 Location: {current_airport['name']} ({current_airport['iso_country']})")
-        print(f"💰 Budget: {CO2_budget}")
-        print(f"🚩 Visited Airports: {len(visited_airports)}/10")
-        print(f"🧑‍🔧 Collected Parts: {len(collected_parts)}/5 - {collected_parts}")
+        print(f"\n Location: {current_airport['name']} ({current_airport['iso_country']})")
+        print(f" Budget: {CO2_budget}")
+        print(f" Visited Airports: {len(visited_airports)}/10")
+        print(f" Collected Parts: {len(collected_parts)}/5 - {collected_parts}")
 
         if len(visited_airports) > 0 and len(required_parts) > 0:
             if random.random() < 0.4:
                 new_part = random.choice(required_parts)
-                print(f"💡 Ohho! You got '{new_part}' in this airport!")
+                print(f" Ohho! You got '{new_part}' in this airport!")
                 collected_parts.append(new_part)
                 required_parts.remove(new_part)
         elif len(visited_airports) == 0:
-            print("🔍 Mission started! Fly to another airport to find parts.")
+            print(" Mission started! Fly to another airport to find parts.")
 
         max_dist_deg = CO2_budget / 100
         sql = f"""
@@ -94,11 +94,11 @@ def start_game():
 
 
     if len(visited_airports) >= 10 and len(collected_parts) == 5:
-        print(f"🏆 Mission accomplished! Congratulations Captain {screen_name}!")
+        print(f" Mission accomplished! Congratulations Captain {screen_name}!")
         print("You visited 10 airports and collected all 5 parts to save the world!")
 
     else:
-        print("You fought brave, Captain, but it wasn't enough.🙏\nThe eco-machine remains unfinished, and the atmosphere has reached its breaking point.\nAs the skies turn grey, we realizes that the destruction is here, and it is absolute")
+        print("You fought brave, Captain, but it wasn't enough.\nThe eco-machine remains unfinished, and the atmosphere has reached its breaking point.\nAs the skies turn grey, we realizes that the destruction is here, and it is absolute")
 
         if CO2_budget <= 0:
             print("Reason: Your CO2 budget is exhausted.")
